@@ -44,7 +44,7 @@ pipeline{
              steps
             {
                 echo 'check done'
-                
+                error 'hiii'
             }
         }
     }
