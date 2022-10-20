@@ -1,7 +1,7 @@
 pipeline{
       
-      agent any
-      stages{
+    agent any
+    stages{
         stage('Hello_world'){
             steps
             {
@@ -46,14 +46,15 @@ pipeline{
                 echo 'check done'
             }
         }
+    }
     
-        post
-        {
-            failure 
-              {
-                slackSend failOnError:true message:"Build failed  - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
-              }
-        }
+    post
+    {
+        failure 
+            {
+            slackSend failOnError:false message:"Build failed  - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+            }
+    }
 }       
         
               
