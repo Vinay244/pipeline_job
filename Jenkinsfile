@@ -40,6 +40,12 @@ pipeline{
               }
         
         }
+        stage('check'){
+             steps
+            {
+                echo 'check done'
+            }
+        }
         stage('Slack Notificaton'){
               steps
               {
