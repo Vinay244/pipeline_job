@@ -44,6 +44,7 @@ pipeline{
              steps
             {
                 echo 'check done'
+                error "failed"
             }
         }
     }
@@ -51,9 +52,9 @@ pipeline{
     post
     {
         failure 
-            {
+        {
             slackSend failOnError:false message:"Build failed  - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
-            }
+        }
     }
 }       
         
