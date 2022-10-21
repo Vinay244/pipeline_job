@@ -40,6 +40,12 @@ pipeline{
               }
         
         }
+        stage('try'){
+            steps
+            {
+                echo 'try'
+            }
+        }
         stage('check'){
              steps
             {
