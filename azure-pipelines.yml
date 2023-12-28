@@ -1,14 +1,12 @@
-trigger:
-- main
-
 pool:
-  vmImage: 'ubuntu-latest'  # You can choose a different agent pool based on your needs
+  vmImage: 'ubuntu-latest'
 
 jobs:
-- job: HelloWorldJob
+- job: Build
   steps:
-  - script: echo "Hello, World!"
-    displayName: 'Print Hello World'
+    - script: echo "Building the project"
 
-
-
+- job: Test
+  dependsOn: Build
+  steps:
+    - script: echo "Testing the project"
