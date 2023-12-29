@@ -7,6 +7,5 @@ jobs:
     - script: echo "Building the project"
 
 - job: Test
-  dependsOn: Build
   steps:
     - script: echo "Testing the project"
