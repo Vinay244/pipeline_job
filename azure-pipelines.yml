@@ -6,6 +6,3 @@ jobs:
   steps:
     - script: echo "Building the project"
 
-- job: Test
-  steps:
-    - script: echo "Testing the project"
