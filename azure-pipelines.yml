@@ -1,8 +1,15 @@
+trigger:
+- main
+
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: ubuntu-latest
 
 jobs:
 - job: Build
   steps:
     - script: echo "Building the project"
 
+- job: Test
+  dependsOn: Build
+  steps:
+    - script: echo "Testing the project"
